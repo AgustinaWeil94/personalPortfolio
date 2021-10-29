@@ -1,0 +1,264 @@
+:root {
+    --border:.1rem inset rgba(0,0,0,.2);
+    --box-shadow:.5rem .5rem 1.2rem #ccc,
+                -.5rem -.5rem 1.2rem #fff;
+    --box-shadow-inset:.5rem .5rem 1.2rem #ccc inset,
+                      -.5rem -.5rem 1.2rem #fff inset;
+    --green:#2cc069;
+    --lavender:#a29bfe;
+    --rose: #f78fb3;
+    --light-blue: #3dc1d3; 
+    --black:#444;
+    --fb:#4267B2;
+    --tw:#1DA1F2;
+    --ig:#ea3145;
+    --pint:#BD081C;
+    --drb:#ea4c89;
+    --light-color:#777;
+    --bg-color:#e6e6e6;
+    --main-radius: 2rem;
+}
+
+/* ---------------------------
+        CUSTOM SCROLLBAR
+--------------------------- */
+
+::-webkit-scrollbar {
+    width: 0.8rem;
+    background-color: var(--bg-color);
+}
+  
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        background-color: var(--bg-color);
+        margin: 0.2em;
+    }
+    
+        ::-webkit-scrollbar-thumb {
+            border: 0.9em solid var(--box-shadow);
+            border-radius: 10px;
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.8);
+            background-color: var(--light-color);
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, var(--rose), var(--lavender), var(--light-blue));
+        }
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0%;
+    /* font-family: 'Roboto Mono', monospace; */
+    font-family: 'Poppins', sans-serif;
+}
+
+.container-y {
+    width: 100vw;
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+
+section {
+    /* flex: none; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    scroll-snap-align: end;
+}
+
+section:nth-of-type(1) {
+    background-color: rgb(108, 108, 108);
+    color: var(--rose);
+}
+
+section:nth-of-type(2) {
+    background-color: rgb(128, 128, 128);
+    color: var(--lavender);
+}
+
+section:nth-of-type(3) {
+    background-color: rgb(148, 148, 148);
+    color: var(--light-blue);
+}
+
+section:nth-of-type(4) {
+    background-color: rgb(168, 168, 168);
+    color: var(--ig);
+}
+
+section:nth-of-type(5) {
+    background-color: rgb(188, 188, 188);
+    color: var(--drb);
+}
+
+section:nth-of-type(6) {
+    background-color: rgb(208, 208, 208);
+    color: salmon;
+}
+
+section:nth-of-type(7) {
+    background-color: rgb(218, 218, 218);
+    color: var(--green);
+}
+
+section:nth-of-type(8) {
+    background-color: var(--bg-color);
+    color: var(--black);
+}
+
+h1 {
+    text-align: center;
+    font-size: 200px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 30px;
+    font-weight: lighter;
+}
+
+#div-curious {
+    /* background-color: var(--bg-color); */
+    /* border: var(--border); */
+    padding: 20px;
+    display: none;
+}
+    
+#p-curious:hover + #div-curious {
+    display: block;
+    padding: 1rem 6rem;
+    border-radius: var(--main-radius);
+    font-size: 2rem;
+    box-shadow: .5rem .5rem 1.2rem rgb(134, 134, 134),
+                -.5rem -.5rem 1.2rem rgb(207, 207, 207);
+    color: var(--black);
+    font-family: 'consolas', 'Roboto Mono', monospace;
+}
+
+a {
+    padding: 1rem 6rem;
+    border-radius: var(--main-radius);
+    font-size: 2rem;
+    box-shadow: var(--box-shadow);
+    color: var(--black);
+    text-decoration: none;
+    font-family: 'consolas', 'Roboto Mono', monospace;
+    bottom: 20%;
+}
+    
+    /* Hover */
+
+    a:hover {
+        box-shadow: var(--box-shadow-inset);
+        color: var(--green);
+        transition: ease-out .6s;
+    }
+
+
+    
+/* ---------------------------
+        MEDIA QUERIES
+--------------------------- */
+
+    /* Medidas para PC escritorio */
+
+    @media only screen and (min-width: 1024px) {
+        h1 {
+            text-align: center;
+            font-size: 200px;
+            font-weight: bold;
+        }
+        
+        p {
+            font-size: 30px;
+            font-weight: 200;
+        }
+
+        a {
+            padding: 1rem 6rem;
+            border-radius: var(--main-radius);
+            font-size: 2rem;
+            box-shadow: var(--box-shadow);
+            color: var(--black);
+            text-decoration: none;
+            font-family: 'consolas', 'Roboto Mono', monospace;
+            bottom: 20%;
+        }
+    }
+
+    /* Medidas para tablets (iPad como referencia) */
+
+    @media only screen and (min-width: 768px) and (max-width: 1023px) {
+        h1 {
+            text-align: center;
+            font-size: 125px;
+            font-weight: bold;
+        }
+        
+        p {
+            font-size: 25px;
+            font-weight: lighter;
+        }
+
+        a {
+            padding: 1rem 5rem;
+            border-radius: var(--main-radius);
+            font-size: 1.5rem;
+            box-shadow: var(--box-shadow);
+            color: var(--black);
+            text-decoration: none;
+            font-family: 'consolas', 'Roboto Mono', monospace;
+            bottom: 20%;
+        }
+
+            a:hover {
+                box-shadow: var(--box-shadow-inset);
+                color: var(--green);
+                transition: ease-out .6s;
+            }
+    }
+
+    /* Medidas para celulares (iPhone X como referencia) */
+
+    @media only screen and (max-width: 767px) {
+        h1 {
+            text-align: center;
+            font-size: 50px;
+            font-weight: bold;
+            margin: 3px;
+        }
+        
+        p {
+            font-size: 15px;
+            font-weight: lighter;
+        }
+
+        #p-curious:hover + #div-curious {
+            display: block;
+            padding: 0.6rem 2.5rem;
+            border-radius: var(--main-radius);
+            font-size: 0.8rem;
+        }
+
+        a {
+            padding: 1rem 4rem;
+            border-radius: var(--main-radius);
+            font-size: 1rem;
+            box-shadow: var(--box-shadow);
+            color: var(--black);
+            text-decoration: none;
+            font-family: 'consolas', 'Roboto Mono', monospace;
+            margin: 40px;
+        }
+
+            a:hover {
+                box-shadow: var(--box-shadow-inset);
+                color: var(--green);
+                transition: ease-out .6s;
+            }
+    }
